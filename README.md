@@ -17,30 +17,33 @@ A comprehensive Flask-based web application designed to help South African Matri
 
 ## 🛠️ Tech Stack
 
-*   **Backend:** Python 3.x, Flask
+*   **Backend:** Python 3.x, Flask, Gunicorn (for production)
 *   **Database:** SQLite3
 *   **Security:** Werkzeug password hashing, Flask cookie-based session management
-*   **Data Feeds:** Local CSV files (`universities.csv`, `bursaries.csv`)
+*   **Deployment:** Render Cloud Platform
 
 ---
 
-## Project Directory Structure
+## 📦 Project Directory Structure
 
 ```text
-├── app.py                  # Main application router and application entry point
+├── app.py                  # Main application router and execution logic
 ├── database.py             # SQLite helper functions (init_db, get_db_connection)
-├── universities.csv        # Seed file containing university courses entry requirements
-├── bursaries.csv           # Seed file containing available student funding structures
-├── templates/              # HTML layout UI structural code
-│   ├── login.html          # Authentication gate
+├── requirements.txt        # Python library dependencies for installation and hosting
+├── render.yaml             # Render Blueprint configuration for seamless deployment
+├── templates/              # HTML template UI files
+│   ├── index.html          # Central workspace reporting dashboard
+│   ├── bursaries.html      # Bursary search, matching, and exploration viewport
+│   ├── login.html          # Secure authentication gate
 │   ├── register.html       # Profile provisioning route
-│   └── index.html          # Central workspace reporting dashboard
-└── README.md               # Setup and user guide (This document)
+│   └── courses.html        # Course matching matrix and academic eligibility view
+├── universities.csv        # Seed file containing university courses entry requirements
+└── bursaries.csv           # Seed file containing available student funding structures
 ```
 
 ---
 
-## Initial Data Structure Requirements
+## ⚙️ Initial Data Structure Requirements
 
 To keep the application processing routines error-free, ensure your data seed files match the structural headers below:
 
@@ -59,7 +62,7 @@ Thuthuka Bursary,SAICA,32,65,60,Full Cost,Accounting,2026-08-31,Tuition & Boardi
 
 ---
 
-## Installation & Quickstart
+## 💻 Local Installation & Quickstart
 
 Follow these steps to run the application on your local machine.
 
@@ -80,22 +83,33 @@ source venv/bin/activate
 ```
 
 ### 3. Install required packages
-Ensure you have `Flask` and its dependencies installed:
+Install all dependencies listed inside the production manifest:
 ```bash
-pip install Flask Werkzeug
+pip install -r requirements.txt
 ```
 
 ### 4. Initialize Database and Run
-Start your server execution block:
+Start your local server execution block:
 ```bash
 python app.py
 ```
-The application will automatically invoke `init_db()` to set up your SQLite database tables.
+The application will automatically invoke `init_db()` from `database.py` to seed your local SQLite database tables if they do not exist.
 
 ### 5. Access the app
 Open your web browser and navigate to: **`http://127.0.0`**
 
 ---
 
-## Security Notice
-The current `app.secret_key` string is set to a static development value (`"super_secret_south_africa_varsity_key_123"`). Before pushing this software to production hosting engines (like Render, Heroku, or AWS), make sure to swap this out for an environment variable loaded securely via `os.environ.get('SECRET_KEY')`.
+## 🌐 Production Deployment (Render)
+
+This repository includes a native **`render.yaml`** Blueprint specification. To deploy this application live:
+
+1. Push your code repository to **GitHub** or **GitLab**.
+2. Log into your **Render Dashboard** (`://render.com`).
+3. Click **New** -> **Blueprint**.
+4. Connect this repository. Render will automatically parse `render.yaml` to spin up your Flask web service with the correct Python environment, disk variables, and `gunicorn` configuration.
+
+---
+
+## 🔒 Security Notice
+The current `app.secret_key` string inside development environments is set to a static development value. Before pushing this software to live environments via Render, make sure to add a custom environment variable named `SECRET_KEY` inside your environment dashboard settings to prevent session high-jacking.
