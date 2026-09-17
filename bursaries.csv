@@ -1,0 +1,97 @@
+Name,Provider,Min_APS,Min_Avg,Req_Math,Income_Limit,Amount,Field,Covers,Deadline,Category
+
+NSFAS,NSFAS,30,50,0,350000,100000,All,Full tuition + accommodation + allowance,30 Nov 2026,SA citizen income < R350k
+FNB Fund Bursary,FNB,32,65,60,600000,80000,All,Tuition + books + laptop,31 Oct 2026,APS 32 Maths 60
+FNB Easy Youth Account,FNB,0,0,0,1000000,0,All,Free student banking + NSFAS payout,Always,Student ID
+Funza Lushaka,DBE,30,55,0,1000000,110000,Education,Full tuition + accommodation,15 Oct 2026,Must study teaching
+ISFAP Bursary,ISFAP Foundation,32,60,50,600000,95000,All,Missing middle full cost + mentoring,31 Oct 2026,Income R350k-R600k
+Thuthuka Bursary,SAICA,32,65,60,350000,85000,Accounting,Tuition + books + mentorship,15 Aug 2026,BCom Accounting Maths 60
+ABSA Bursary,ABSA,33,65,50,600000,85000,All,Tuition + accommodation,31 Aug 2026,APS 33
+Nedbank Bursary,Nedbank,34,65,60,600000,90000,Commerce/IT/Science,Tuition + accommodation,30 Sep 2026,APS 34
+Standard Bank Bursary,Standard Bank,35,70,60,600000,100000,Commerce/STEM,Full tuition,30 Sep 2026,APS 35 Maths 60
+Capitec Bursary,Capitec,32,60,50,600000,70000,All,Tuition,30 Sep 2026,Financial need
+Old Mutual Bursary,Old Mutual,34,70,60,600000,90000,Actuarial/Accounting,Full tuition,30 Sep 2026,Actuarial Accounting
+Sanlam Bursary,Sanlam,34,70,70,600000,90000,Actuarial,Full tuition + stipend,30 Sep 2026,Maths 70 Actuarial
+Investec Bursary,Investec,38,75,70,600000,120000,All,Full + leadership program,30 Sep 2026,Top achiever APS 38
+SARS Bursary,SARS,32,60,50,600000,80000,Accounting/Law/IT,Tuition + practical,31 Aug 2026,Accounting Law
+Department of Health Bursary,NDoH,33,60,50,350000,80000,Health/Medicine/Pharmacy,Full tuition,31 Oct 2026,Health degree
+
+Social Work Bursary,DSD,30,55,0,350000,70000,Social Work,Tuition + accommodation,31 Oct 2026,Social Work degree
+Eskom Bursary,Eskom,32,65,60,600000,100000,Engineering,Full + practical + job,31 Jul 2026,Engineering Electrical Mechanical
+Sasol Bursary,Sasol,35,70,70,600000,120000,Engineering/Science,Full + stipend + vacation work,30 Sep 2026,Engineering Chemistry
+Transnet Bursary,Transnet,33,65,60,600000,90000,Engineering/Logistics,Full tuition + accommodation,15 Sep 2026,Engineering
+Anglo American Bursary,Anglo American,34,70,70,600000,110000,Mining/Engineering,Full + accommodation + laptop,30 Sep 2026,Mining Engineering
+De Beers Bursary,De Beers,33,65,60,600000,90000,Mining/Engineering,Full tuition,30 Sep 2026,Mining
+Exxaro Bursary,Exxaro,33,65,60,600000,90000,Mining/Engineering,Full + accommodation,30 Sep 2026,Mining Metallurgy
+Sasol Mining Bursary,Sasol Mining,33,65,60,600000,95000,Mining,Full tuition,30 Sep 2026,Mining Engineering
+Glencore Bursary,Glencore,33,65,60,600000,85000,Mining/Engineering,Full tuition,31 Oct 2026,Mining Engineering
+Sibanye Stillwater Bursary,Sibanye Stillwater,33,65,60,600000,90000,Mining/Engineering,Full tuition,31 Oct 2026,Mining
+Kumba Iron Ore Bursary,Kumba,33,65,60,600000,90000,Mining/Engineering,Full tuition,30 Sep 2026,Mining Engineering
+Palabora Mining Bursary,Palabora,32,60,50,600000,70000,Mining/Engineering,Tuition,31 Oct 2026,Mining
+Petra Diamonds Bursary,Petra Diamonds,32,60,50,600000,75000,Mining/Engineering,Tuition,31 Oct 2026,Mining
+South32 Bursary,South32,33,65,60,600000,85000,Mining/Engineering,Full tuition,30 Sep 2026,Engineering
+Harmony Gold Bursary,Harmony Gold,32,60,50,600000,75000,Mining/Engineering,Tuition,31 Oct 2026,Mining Engineering
+
+Gold Fields Bursary,Gold Fields,33,65,60,600000,85000,Mining/Engineering,Full tuition,30 Sep 2026,Mining
+Vodacom Bursary,Vodacom,35,70,65,350000,100000,ICT/Engineering,Full + laptop + stipend,31 Aug 2026,STEM 70 avg
+MTN Bursary,MTN,34,65,60,600000,100000,ICT/Engineering,Full tuition + accommodation,30 Sep 2026,ICT Engineering
+Telkom Bursary,Telkom,33,65,60,600000,85000,ICT/Engineering,Full tuition,30 Sep 2026,IT Engineering
+Siemens Bursary,Siemens,34,70,70,600000,90000,Engineering,Full tuition + practical,31 Aug 2026,Electrical Engineering
+Microsoft Bursary,Microsoft,35,70,60,600000,90000,Computer Science,Full tuition,31 Oct 2026,IT
+Google Africa Bursary,Google,36,75,60,600000,100000,Computer Science,Full + mentorship,31 Oct 2026,Computer Science
+CSIR Bursary,CSIR,35,70,70,600000,90000,Science/Engineering,Tuition + stipend,30 Sep 2026,Science
+NRF Bursary,NRF,35,70,60,600000,90000,Science/Masters,Full tuition,31 Oct 2026,Science Research
+SENTECH Bursary,SENTECH,33,65,60,600000,80000,Engineering/IT,Tuition,30 Sep 2026,Engineering
+Vodacom Tech Bursary,Vodacom Tech,34,65,60,350000,85000,ICT,Tuition + laptop,31 Aug 2026,ICT
+BANKSETA Bursary,BANKSETA,30,55,0,600000,50000,Banking/Finance,Tuition,31 Aug 2026,Finance
+MICTSETA Bursary,MICTSETA,32,60,50,600000,60000,ICT/Media,Tuition + stipend,30 Sep 2026,IT Media
+MERSETA Bursary,MERSETA,32,60,50,600000,60000,Engineering,Full tuition,30 Sep 2026,Engineering
+HWSETA Bursary,HWSETA,30,55,0,350000,60000,Health,Tuition,30 Sep 2026,Health degree
+
+ETDPSETA Bursary,ETDPSETA,30,55,0,350000,60000,Education,Tuition,31 Aug 2026,Education
+FASSET Bursary,FASSET,32,60,50,600000,70000,Accounting/Finance,Tuition,30 Sep 2026,Accounting Finance
+CETA Bursary,CETA,30,55,0,600000,60000,Construction,Tuition,31 Oct 2026,Built Environment
+W&RSETA Bursary,W&RSETA,30,50,0,600000,50000,Retail,Tuition,31 Aug 2026,Retail Management
+FOODBEV Bursary,FOODBEV,30,55,0,600000,55000,Food Science,Tuition,30 Sep 2026,Food Technology
+AGRISETA Bursary,AGRISETA,30,55,0,600000,60000,Agriculture,Tuition,30 Sep 2026,Agriculture
+INSETA Bursary,INSETA,32,60,50,600000,60000,Insurance,Tuition,31 Aug 2026,Insurance Finance
+LGSETA Bursary,LGSETA,30,55,0,600000,55000,Local Government,Tuition,31 Aug 2026,Public Admin
+PSETA Bursary,PSETA,30,55,0,600000,55000,Public Service,Tuition,31 Aug 2026,Public Management
+SERVICES SETA Bursary,SERVICES SETA,30,50,0,600000,50000,Services,Tuition,31 Aug 2026,Various
+TETA Bursary,TETA,32,60,50,600000,60000,Transport,Tuition,30 Sep 2026,Logistics Transport
+Coca-Cola Bursary,Coca-Cola,33,65,50,600000,75000,Engineering/Marketing,Full tuition,31 Oct 2026,Engineering Marketing
+SAB Bursary,SAB,33,65,50,600000,80000,Engineering/IT/Logistics,Full tuition,30 Sep 2026,Engineering
+Shoprite Bursary,Shoprite,30,60,0,600000,70000,Pharmacy/Retail/Logistics,Tuition + job,30 Sep 2026,Pharmacy Accounting
+Pick n Pay Bursary,Pick n Pay,30,60,0,600000,65000,Commerce/Pharmacy,Tuition,30 Sep 2026,Commerce
+
+Woolworths Bursary,Woolworths,34,70,50,600000,75000,Commerce/IT,Tuition,31 Aug 2026,Commerce
+Allan Gray Orbis Fellowship,Allan Gray,42,80,70,1000000,150000,All,Full + entrepreneurship + mentorship,30 Sep 2026,APS 42 Leadership
+Moshal Scholarship,Moshal Program,36,75,60,600000,120000,All,Full + laptop + mentoring,30 Sep 2026,Financial need 75%
+Dell Young Leaders,Dell Foundation,32,60,50,350000,100000,All,Full + laptop + mentorship,30 Sep 2026,Income < R350k
+StudyTrust Bursary,StudyTrust,32,60,50,600000,80000,All,Partial tuition,30 Sep 2026,All degrees
+Canon Collins Scholarship,Canon Collins,35,70,0,600000,80000,All,Masters/PhD funding,29 Aug 2026,Postgrad
+Mandela Rhodes Scholarship,Mandela Rhodes,38,75,0,1000000,150000,All,Postgrad + leadership,30 Apr 2026,Postgrad leadership
+Rhodes Scholarship,Rhodes Trust,40,80,0,1000000,200000,All,Oxford University,31 Jul 2026,Oxford postgrad
+Chevening Scholarship,UK Government,36,70,0,1000000,200000,All,UK Masters,30 Nov 2026,Postgrad
+DAAD Scholarship,DAAD Germany,35,70,0,1000000,150000,All,Germany Masters,30 Sep 2026,Postgrad
+Fulbright Scholarship,USA Government,36,75,0,1000000,180000,All,USA Masters/PhD,30 Apr 2026,Postgrad
+Beit Trust Scholarship,Beit Trust,38,75,0,1000000,160000,All,UK Masters,31 Mar 2026,Postgrad
+SAWISE Bursary,SAWISE,32,60,50,600000,40000,STEM Women,Women in Science,30 Nov 2026,Female STEM student
+NYDA Bursary,NYDA,30,55,0,350000,50000,All,Youth funding,30 Jun 2026,Age 18-35
+Funza Lushaka Extension,DBE,30,55,0,1000000,60000,Education,PGCE teaching,15 Oct 2026,Teaching PGCE
+
+Department of Agriculture Bursary,DAFF,30,55,0,350000,70000,Agriculture,Full tuition,30 Sep 2026,Agriculture degree
+Water Affairs Bursary,DWS,33,60,50,350000,80000,Water/Engineering,Full tuition + accommodation,31 Oct 2026,Water related studies
+Department of Public Works Bursary,DPW,32,60,50,350000,70000,Built Environment,Full tuition,30 Sep 2026,Engineering Construction
+Mobenzi Bursary,Mobenzi,32,60,50,600000,60000,Engineering,Full tuition,31 Oct 2026,Engineering
+Hatch Bursary,Hatch,33,65,60,600000,80000,Engineering,Full tuition,30 Sep 2026,Engineering
+Aurecon Bursary,Aurecon,34,70,60,600000,90000,Engineering,Full tuition + vacation work,31 Aug 2026,Engineering
+Sappi Bursary,Sappi,33,65,60,600000,85000,Engineering/Forestry,Full tuition,30 Sep 2026,Chemical Forestry
+ArcelorMittal Bursary,ArcelorMittal,33,65,60,600000,85000,Engineering,Full tuition,30 Sep 2026,Engineering Metallurgy
+BMW Bursary,BMW,34,70,60,600000,80000,Engineering/IT,Tuition + internship,31 Oct 2026,Engineering IT
+Toyota Bursary,Toyota,33,65,60,600000,80000,Engineering/Commerce,Full tuition,30 Sep 2026,Engineering Commerce
+Ford Bursary,Ford,32,60,50,600000,70000,Engineering,Tuition,31 Oct 2026,Engineering
+Nissan Bursary,Nissan,32,60,50,600000,70000,Engineering,Tuition,31 Oct 2026,Engineering
+Unilever Bursary,Unilever,33,65,50,600000,80000,Engineering/Marketing,Tuition,30 Sep 2026,Engineering Marketing
+PPS Bursary,PPS,33,65,60,600000,80000,STEM,Full tuition,30 Sep 2026,STEM degree
+Ernst & Young Bursary,EY,34,70,60,600000,80000,Accounting,Tuition + traineeship,31 Aug 2026,CA stream
