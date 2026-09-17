@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qualified Bursaries // Dark Tech</title>
+</head>
+<body style="margin:0; background:#08080a; color:#ddd; font-family:monospace; padding:20px;">
+
+<h1 style="text-align:center; color:#fff;">THEMBAS TRACKER</h1>
+<p style="text-align:center; color:#4ade80; font-size:12px;">FUNDING MATCH CHANNELS // SEPARATE OUTPUT MATRIX</p>
+
+<div style="max-width:1100px; margin:20px auto; text-align:left;">
+    <a href="{{ url_for('index') }}" style="background:#222; color:#fff; border:1px solid #444; padding:8px 16px; text-decoration:none; border-radius:4px; font-size:12px;">⬅ RETURN TO CORE CONTROL DASHBOARD</a>
+</div>
+
+<div style="max-width:1100px; margin:30px auto;">
+<h3 style="text-align:center; color:#fff;">QUALIFIED BURSARY CHANNELS</h3>
+<table style="width:100%; background:#141417; border-collapse:collapse; border-radius:10px; overflow:hidden;">
+<tr style="background:#0a0a0c;">
+    <th style="padding:10px; text-align:left; color:#666; font-size:11px;">BURSARY SCHEME</th>
+    <th style="padding:10px; text-align:left; color:#666; font-size:11px;">PROVIDER</th>
+    <th style="padding:10px; text-align:left; color:#666; font-size:11px;">SCOPE & SCOPE FIELD</th>
+    <th style="padding:10px; color:#666; font-size:11px;">DEADLINE</th>
+</tr>
+{% for bursary in bursaries %}
+<tr style="border-bottom:1px solid #222;">
+    <td style="padding:10px; color:#4ade80; font-weight:bold;">{{ bursary.name }}</td>
+    <td style="padding:10px; color:#fff;">{{ bursary.provider }}</td>
+    <td style="padding:10px; font-size:12px; color:#888;">
+        <strong>Field:</strong> {{ bursary.field }} <br>
+        <span style="font-size:11px; color:#666;">Covers: {{ bursary.covers }}</span>
+    </td>
+    <td style="padding:10px; text-align:center; color:#ff5555; font-weight:bold;">{{ bursary.deadline }}</td>
+</tr>
+{% else %}
+<tr><td colspan="4" style="padding:20px; text-align:center; color:#ffcc00;">NO CORPORATE FUNDING CHANNELS MATCHED YOUR SCORE METRICS YET</td></tr>
+{% endfor %}
+</table>
+</div>
+
+</body>
+</html>
