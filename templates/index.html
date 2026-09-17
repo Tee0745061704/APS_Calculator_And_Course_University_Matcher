@@ -1,101 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thembas Marks Calculator</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Thembas Tracker</title>
 </head>
-<body>
-    <h1>📈 Thembas APS Calculator & Course,University Matcher</h1>
-    <p class="sub-header">Tracker for all 26 South African Public Universities</p>
+<body style="margin:0; background:#08080a; color:#ddd; font-family:monospace; padding:15px; box-sizing: border-box;">
 
-    <!-- Input Form -->
-    <form method="POST" class="input-form" action="/add">
-        <p>Subject and Percentage Data:</p>
-        <input type="text" name="subject" class="input-text" placeholder="e.g. Mathematics, Physical Sciences" required>
-        <input type="number" name="mark" class="input-number" placeholder="Mark %" min="0" max="100" required>
-        <br><br>
-        <button type="submit" class="btn-submit">Save</button>
+<h1 style="text-align:center; color:#fff; font-size:24px; margin-bottom:5px;">THEMBAS TRACKER</h1>
+<p style="text-align:center; color:#00ffff; font-size:12px; margin-top:0; margin-bottom:5px;">APS TRACKER // DARK TECH EDITION</p>
+<p style="text-align:center; font-size:12px; margin-bottom:20px;">USER: {{ session.get('username','STUDENT') }} | <a href="/logout" style="color:#ff5555;">LOGOUT</a></p>
+
+<!-- Navigation Hub to Separate Views -->
+<div style="max-width:700px; margin:20px auto; display:flex; flex-direction:column; gap:10px; justify-content:center;">
+    <a href="{{ url_for('view_courses') }}" style="text-align:center; text-decoration:none; background:#a855f7; color:#fff; padding:12px; font-weight:bold; border-radius:5px; font-size:13px; border:1px solid #c084fc; box-sizing: border-box;">ACCESS COURSE MATCHES</a>
+    <a href="{{ url_for('view_bursaries') }}" style="text-align:center; text-decoration:none; background:#2e7d32; color:#fff; padding:12px; font-weight:bold; border-radius:5px; font-size:13px; border:1px solid #4ade80; box-sizing: border-box;">ACCESS BURSARY MODULES</a>
+</div>
+
+<!-- Academic Input Form -->
+<div style="max-width:700px; margin:20px auto; background:#141417; border:1px solid #222; padding:15px; border-radius:10px; border-top:1px solid #a855f7; box-sizing: border-box;">
+<form action="/add" method="POST" style="display:flex; gap:10px;">
+<input type="text" name="subject" placeholder="Subject" required style="flex:2; padding:10px; background:#0a0a0c; border:1px solid #333; color:#fff; border-radius:5px; font-family:monospace; min-width:0; box-sizing: border-box;">
+<input type="number" name="mark" placeholder="%" required min="0" max="100" style="flex:1; padding:10px; background:#0a0a0c; border:1px solid #333; color:#fff; border-radius:5px; font-family:monospace; min-width:0; box-sizing: border-box;">
+<button type="submit" style="width:70px; background:#00ffff; border:none; border-radius:5px; font-weight:bold; cursor:pointer; font-family:monospace; box-sizing: border-box;">ADD</button>
+</form>
+</div>
+
+<!-- Terminal Notification Stats Panel -->
+<div style="max-width:900px; margin:20px auto; background:#141417; border:1px solid #222; padding:15px; border-radius:10px; border-top:1px solid #00ffff; box-sizing: border-box;">
+<pre style="white-space:pre-line; color:#b8f5ff; margin:0; font-family:monospace; font-size:13px; overflow-x:auto;">{{ result }}</pre>
+</div>
+
+<!-- COST PLANNING ENGINE MODULE -->
+<div style="max-width:900px; margin:30px auto; background:#141417; border:1px solid #222; padding:15px; border-radius:10px; border-top:1px solid #00ffff; box-sizing: border-box;">
+    <h3 style="color:#fff; margin-top:0; font-size:14px; letter-spacing:1px; margin-bottom:15px;">💵 FINANCIAL COST SIMULATION ENGINE</h3>
+    <form action="/add_cost" method="POST" style="display:flex; flex-direction:column; gap:10px;">
+        <input type="text" name="course_name" placeholder="Track Route (e.g. Wits BEng)" required style="width:100%; padding:10px; background:#0a0a0c; border:1px solid #333; color:#fff; border-radius:5px; font-family:monospace; box-sizing: border-box;">
+        <input type="number" name="tuition" placeholder="Tuition Fees (R)" required min="0" style="width:100%; padding:10px; background:#0a0a0c; border:1px solid #333; color:#fff; border-radius:5px; font-family:monospace; box-sizing: border-box;">
+        <input type="number" name="accommodation" placeholder="Rent Expenses (R)" required min="0" style="width:100%; padding:10px; background:#0a0a0c; border:1px solid #333; color:#fff; border-radius:5px; font-family:monospace; box-sizing: border-box;">
+        <input type="number" name="books" placeholder="Books & Materials (R)" required min="0" style="width:100%; padding:10px; background:#0a0a0c; border:1px solid #333; color:#fff; border-radius:5px; font-family:monospace; box-sizing: border-box;">
+        <button type="submit" style="width:100%; background:#00ffff; border:none; padding:12px; border-radius:5px; font-weight:bold; cursor:pointer; font-family:monospace; color:#000; box-sizing: border-box; font-size:14px; letter-spacing:1px;">LOG EXPENSES</button>
     </form>
 
-    <br><br>
-
-    <!-- Results and Stats Section -->
-    <div class="stats-container">
-        <h3 class="stats-text">{{ result }}</h3>
-    </div>
-
-    <hr>
-
-    <!-- Course Qualification Section -->
-    <h2>🎓 System Matched Institutional Eligibility</h2>
-    <div class="table-wrapper">
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th style="text-align: left;">Institution</th>
-                    <th style="text-align: left;">Academic Programme Track</th>
-                    <th>Threshold Matrix</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for course in courses %}
-                <tr class="course-row">
-                    <td class="varsity-cell">{{ course.varsity }}</td>
-                    <td class="course-cell">{{ course.name }}</td>
-                    <td class="matrix-cell">Min APS: {{ course.min_aps }}<br>Min Avg: {{ course.min_avg }}%</td>
-                    <td style="text-align: center;">
-                        <span class="status-badge">QUALIFIED ✅</span>
-                    </td>
-                </tr>
-                {% else %}
-                <tr>
-                    <td colspan="4" class="empty-cell">
-                        No active course matrix thresholds matched. Build your 7-subject profile ledger, fulfill gateway requirements (e.g. Pure Mathematics), or input raw test scores.
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
+    {% if costs %}
+    <div style="width:100%; overflow-x:auto; margin-top:20px; border-radius:5px;">
+        <table style="width:100%; background:#0a0a0c; border-collapse:collapse; min-width:500px;">
+            <tr style="background:#020203;"><th style="padding:10px; text-align:left; color:#666; font-size:11px;">PATHWAY ROUTE</th><th style="padding:10px; color:#666; font-size:11px; text-align:center;">GROSS FEE METRIC</th><th style="padding:10px; text-align:left; color:#666; font-size:11px;">FUNDS BREAKDOWN SUMMARY</th></tr>
+            {% for cost in costs %}
+            <tr style="border-bottom:1px solid #222;">
+                <td style="padding:10px; color:#fff;">{{ cost.course_name }}</td>
+                <td style="padding:10px; text-align:center; color:#00ffff; font-weight:bold;">R{{ cost.tuition + cost.accommodation + cost.books }}</td>
+                <td style="padding:10px; font-size:11px; color:#888;">Tuition: R{{cost.tuition}} | Res: R{{cost.accommodation}} | Materials: R{{cost.books}}</td>
+            </tr>
+            {% endfor %}
         </table>
     </div>
+    {% endif %}
+</div>
 
-    <hr>
+<!-- PERSISTENCE LEDGER WELLNESS CHECK MODULE -->
+<div style="max-width:900px; margin:30px auto; background:#141417; border:1px solid #222; padding:15px; border-radius:10px; border-top:1px solid #a855f7; box-sizing: border-box;">
+    <h3 style="color:#fff; margin-top:0; font-size:14px; letter-spacing:1px; margin-bottom:15px;">🧠 STUDENT PERSISTENCE & TIMELINE WORKLOAD LOG</h3>
+    <form action="/add_wellness" method="POST" style="display:flex; flex-direction:column; gap:10px;">
+        <input type="text" name="feeling" placeholder="Log disposition timeline workloads (e.g. Need physics support)" required style="width:100%; padding:10px; background:#0a0a0c; border:1px solid #333; color:#fff; border-radius:5px; font-family:monospace; box-sizing: border-box;">
+        <button type="submit" style="width:100%; background:#a855f7; color:#fff; border:none; padding:12px; border-radius:5px; font-weight:bold; cursor:pointer; font-family:monospace; box-sizing: border-box; font-size:14px; letter-spacing:1px;">CHECK IN</button>
+    </form>
 
-    <!-- Database Entries Table -->
-    <h2>📚 Active Subject Ledger</h2>
-    <div class="table-wrapper">
-        <table class="ledger-table">
-            <thead>
-                <tr>
-                    <th style="text-align: left;">Subject Component</th>
-                    <th>Validated Score</th>
-                    <th>APS Yield</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for row in subjects %}
-                <tr class="ledger-row">
-                    <td class="subject-cell">{{ row['subject'] }}</td>
-                    <td>{{ row['mark'] }}%</td>
-                    <td style="font-weight: bold;">
-                        {{ '0 (LO Excluded)' if row['level'] == 0 else 'Level ' ~ row['level'] }}
-                    </td>
-                    <td>
-                        <form method="POST" action="/delete/{{ row['id'] }}" style="margin:0;">
-                            <button type="submit" class="btn-delete">Remove</button>
-                        </form>
-                    </td>
-                </tr>
-                {% else %}
-                <tr>
-                    <td colspan="4" class="ledger-empty">No subject profiles currently found in database ledger.</td>
-                </tr>
-                {% endfor %}
-            </tbody>
+    {% if wellness_checks %}
+    <div style="width:100%; overflow-x:auto; margin-top:20px; border-radius:5px;">
+        <table style="width:100%; background:#0a0a0c; border-collapse:collapse; min-width:400px;">
+            <tr style="background:#020203;"><th style="padding:10px; text-align:left; color:#666; font-size:11px; width:30%;">TIMESTAMP</th><th style="padding:10px; text-align:left; color:#666; font-size:11px;">DISPOSITION STATUS REPORT</th></tr>
+            {% for check in wellness_checks %}
+            <tr style="border-bottom:1px solid #222;">
+                <td style="padding:10px; color:#a855f7; font-size:11px;">{{ check.check_date }}</td>
+                <td style="padding:10px; color:#b8f5ff; font-style:italic; font-size:13px;">"{{ check.feeling }}"</td>
+            </tr>
+            {% endfor %}
         </table>
     </div>
+    {% endif %}
+</div>
+
+<!-- Academic Ledger Table -->
+<div style="max-width:900px; margin:30px auto; box-sizing: border-box;">
+<h3 style="text-align:center; color:#fff; font-size:16px;">ACADEMIC LEDGER</h3>
+<div style="width:100%; overflow-x:auto; border-radius:10px;">
+<table style="width:100%; background:#141417; border-collapse:collapse; min-width:450px;">
+<tr style="background:#0a0a0c;"><th style="padding:10px; text-align:left; color:#666; font-size:11px;">SUBJECT</th><th style="padding:10px; color:#666; font-size:11px; text-align:center;">MARK</th><th style="padding:10px; color:#666; font-size:11px; text-align:center;">LEVEL</th><th style="padding:10px; color:#666; font-size:11px; text-align:center;">ACTION</th></tr>
+{% for row in subjects %}
+<tr style="border-bottom:1px solid #222;">
+    <td style="padding:10px; color:#fff;">{{ row['subject'] }}</td>
+    <td style="padding:10px; color:#00ffff; text-align:center; font-weight:bold;">{{ row['mark'] }}%</td>
+    <td style="padding:10px; color:#a855f7; text-align:center; font-weight:bold;">{{ row['level'] }}</td>
+    <td style="padding:10px; text-align:center;"><form action="{{ url_for('delete', id=row['id']) }}" method="POST" style="margin:0;"><button type="submit" style="background:#331111; border:1px solid #552222; color:#ff6b6b; padding:6px 10px; border-radius:4px; cursor:pointer; font-family:monospace; font-size:12px;">DELETE</button></form></td>
+</tr>
+{% else %}
+<tr><td colspan="4" style="padding:20px; text-align:center; color:#555;">EMPTY LEDGER DETECTED</td></tr>
+{% endfor %}
+</table>
+</div>
+</div>
+
 </body>
-</html>
+    </html>
+    
